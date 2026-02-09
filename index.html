@@ -217,118 +217,38 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-  <div class="row mx-auto index-card" style="margin-bottom: 12px;">
-    <div class="col-12 mx-auto index-info">
-      <div id="heatmap" style="width: 100%; height: 190px;"></div>
-    </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-  <script type="text/javascript">
-    var chartDom = document.getElementById('heatmap');
-    var myChart = echarts.init(chartDom);
-    var option;
 
-    fetch("/my-blog/heatmap.json")
-      .then(response => response.json())
-      .then(data => {
-        var currentYear = new Date().getFullYear();
-        option = {
-          title: {
-            top: 0,
-            left: 'center',
-            text: '博客热力图'
-          },
-          tooltip: {
-            position: 'top',
-            formatter: function (p) {
-              var format = echarts.format.formatTime('yyyy-MM-dd', p.data[0]);
-              return format + ': ' + p.data[1];
-            }
-          },
-          visualMap: {
-            type: 'piecewise',
-            orient: 'horizontal',
-            left: 'center',
-            top: 34,
-            itemGap: 16,
-            itemWidth: 22,
-            itemHeight: 14,
-            textStyle: {
-              color: '#6b5c72'
-            },
-            pieces: [
-              { min: 0, max: 2.5, label: '0.0 - 2.5', color: '#c7bccf' },
-              { min: 2.5, max: 5.0, label: '2.5 - 5.0', color: '#b1a3c0' },
-              { min: 5.0, max: 7.5, label: '5.0 - 7.5', color: '#9786b0' },
-              { min: 7.5, max: 10.0, label: '7.5 - 10.0', color: '#7b6a9a' }
-            ]
-          },
-          graphic: [
-            {
-              type: 'text',
-              right: 24,
-              top: 36,
-              style: {
-                text: '千字',
-                fill: '#6b5c72',
-                font: '14px sans-serif'
-              }
-            }
-          ],
-          calendar: {
-            top: 72,
-            left: 30,
-            right: 30,
-            cellSize: ['auto', 12],
-            range: currentYear,
-            itemStyle: {
-              borderWidth: 0.5
-            },
-            yearLabel: { show: false }
-          },
-          series: {
-            type: 'heatmap',
-            coordinateSystem: 'calendar',
-            data: data
-          }
-        };
-        myChart.setOption(option);
-      });
-  </script>
-
-  
-    <div class="row mx-auto index-card">
-      
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
         
-            <article class="col-12 col-md-12 mx-auto index-info">
-              <h2 class="index-header">
-                
-                    <a href="/my-blog/2026/02/08/ai-coding-TRAE/" target="_self">
-                      “智研达人”系列分享活动——AI编程工具Trae入门教程
-                    </a>
-              </h2>
+        <a href="/my-blog/2026/02/08/ai-coding-TRAE/" target="_self">
+          “智研达人”系列分享活动——AI编程工具Trae入门教程
+        </a>
+      </h2>
 
-              
-                <a class="index-excerpt index-excerpt__noimg" href="/my-blog/2026/02/08/ai-coding-TRAE/"
-                  target="_self">
-                  <div>
-                    这是由中科大图书馆主办的“智研达人”AI工具分享活动，我分享的主题是AI编程工具Trae入门教程，这个博客是我分享内容的详细大纲与讲义。Trae是由字节跳动团队研发的一款类似于VSCode的编译器，覆盖从编码、调试到测试、重构、部署等多类开发任务，其深度融合AI能力，是一名个能够理解需求、调用工具并独立完成各类开发任务的AI开发工具。   1 引言1.1 我的科研工作流大语言模型已经成为了科研工
-                  </div>
-                </a>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/my-blog/2026/02/08/ai-coding-TRAE/" target="_self">
+        <div>
+          这是由中科大图书馆主办的“智研达人”AI工具分享活动，我分享的主题是AI编程工具Trae入门教程，这个博客是我分享内容的详细大纲与讲义。Trae是由字节跳动团队研发的一款类似于VSCode的编译器，覆盖从编码、调试到测试、重构、部署等多类开发任务，其深度融合AI能力，是一名个能够理解需求、调用工具并独立完成各类开发任务的AI开发工具。   1 引言1.1 我的科研工作流大语言模型已经成为了科研工
+        </div>
+      </a>
 
-                <div class="index-btm post-metas">
-                  
-                    <div class="post-meta mr-3">
-                      <i class="iconfont icon-date"></i>
-                      <time datetime="2026-02-08 19:29" pubdate>
-                        2026-02-08
-                      </time>
-                    </div>
-                    
-                      
-                        <div class="post-meta mr-3 d-flex align-items-center">
-                          <i class="iconfont icon-category"></i>
-                          
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2026-02-08 19:29" pubdate>
+              2026-02-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
 
 <span class="category-chains">
   
@@ -345,58 +265,58 @@
   
 </span>
 
-                        </div>
-                        
-                          
-                            <div class="post-meta">
-                              <i class="iconfont icon-tags"></i>
-                              
-                                <a href="/my-blog/tags/%E5%B7%A5%E5%85%B7/">#工具</a>
-                                
-                                <a href="/my-blog/tags/%E5%BC%80%E5%8F%91/">#开发</a>
-                                
-                            </div>
-                            
-                </div>
-            </article>
-    </div>
-    
-    <div class="row mx-auto index-card">
-      
+          </div>
         
-            <article class="col-12 col-md-12 mx-auto index-info">
-              <h2 class="index-header">
-                
-                    <a href="/my-blog/2026/02/07/hello-world/" target="_self">
-                      Hello World
-                    </a>
-              </h2>
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/my-blog/tags/%E5%B7%A5%E5%85%B7/">#工具</a>
+            
+              <a href="/my-blog/tags/%E5%BC%80%E5%8F%91/">#开发</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
-              
-                <a class="index-excerpt index-excerpt__noimg" href="/my-blog/2026/02/07/hello-world/"
-                  target="_self">
-                  <div>
-                    Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
-                  </div>
-                </a>
-
-                <div class="index-btm post-metas">
-                  
-                    <div class="post-meta mr-3">
-                      <i class="iconfont icon-date"></i>
-                      <time datetime="2026-02-07 19:29" pubdate>
-                        2026-02-07
-                      </time>
-                    </div>
-                    
-                      
-                          
-                </div>
-            </article>
-    </div>
+  <div class="row mx-auto index-card">
     
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/my-blog/2026/02/07/hello-world/" target="_self">
+          Hello World
+        </a>
+      </h2>
 
       
+      <a class="index-excerpt index-excerpt__noimg" href="/my-blog/2026/02/07/hello-world/" target="_self">
+        <div>
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2026-02-07 19:29" pubdate>
+              2026-02-07
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
 
               </div>
             </div>

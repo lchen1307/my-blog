@@ -722,7 +722,6 @@ sup > a::before,
 }
 .tocbot-list a {
   font-size: 0.95rem;
-  line-height: 1.6;
 }
 .tocbot-link {
   color: var(--text-color);
