@@ -217,6 +217,85 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
+<div class="row mx-auto index-card" style="margin-bottom: 12px;">
+  <div class="col-12 mx-auto index-info">
+    <div id="heatmap" style="width: 100%; height: 190px;"></div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<script type="text/javascript">
+  var chartDom = document.getElementById('heatmap');
+  var myChart = echarts.init(chartDom);
+  var option;
+
+  fetch("/heatmap.json")
+    .then(response => response.json())
+    .then(data => {
+      var currentYear = new Date().getFullYear();
+      option = {
+        title: {
+          top: 0,
+          left: 'center',
+          text: '博客热力图'
+        },
+        tooltip: {
+          position: 'top',
+          formatter: function (p) {
+            var format = echarts.format.formatTime('yyyy-MM-dd', p.data[0]);
+            return format + ': ' + p.data[1];
+          }
+        },
+        visualMap: {
+          type: 'piecewise',
+          orient: 'horizontal',
+          left: 'center',
+          top: 34,
+          itemGap: 16,
+          itemWidth: 22,
+          itemHeight: 14,
+          textStyle: {
+            color: '#6b5c72'
+          },
+          pieces: [
+            { min: 0, max: 2.5, label: '0.0 - 2.5', color: '#c7bccf' },
+            { min: 2.5, max: 5.0, label: '2.5 - 5.0', color: '#b1a3c0' },
+            { min: 5.0, max: 7.5, label: '5.0 - 7.5', color: '#9786b0' },
+            { min: 7.5, max: 10.0, label: '7.5 - 10.0', color: '#7b6a9a' }
+          ]
+        },
+        graphic: [
+          {
+            type: 'text',
+            right: 24,
+            top: 36,
+            style: {
+              text: '千字',
+              fill: '#6b5c72',
+              font: '14px sans-serif'
+            }
+          }
+        ],
+        calendar: {
+          top: 72,
+          left: 30,
+          right: 30,
+          cellSize: ['auto', 12],
+          range: currentYear,
+          itemStyle: {
+            borderWidth: 0.5
+          },
+          yearLabel: { show: false }
+        },
+        series: {
+          type: 'heatmap',
+          coordinateSystem: 'calendar',
+          data: data
+        }
+      };
+      myChart.setOption(option);
+    });
+</script>
+
 
   <div class="row mx-auto index-card">
     
